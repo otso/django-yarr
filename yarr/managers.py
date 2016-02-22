@@ -291,6 +291,8 @@ class EntryManager(models.Manager):
         entry.author = raw.get('author', '')
         entry.comments_url = raw.get('comments', '')
         
+        entry.category = raw.get('category', '')
+
         # ++ TODO: tags
         """
         tags = raw.get('tags', None)

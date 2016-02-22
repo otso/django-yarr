@@ -506,6 +506,11 @@ class Entry(models.Model):
         blank=True,
         help_text="GUID for the entry, according to the feed",
     )
+
+    category = models.TextField(
+        blank=True,
+        help_text="Category of the entry, according to the feed",
+    )
     
     # ++ TODO: tags
     
@@ -520,7 +525,7 @@ class Entry(models.Model):
         """
         fields = [
             'title', 'content', 'date', 'author', 'url', 'comments_url',
-            'guid',
+            'guid', 'category',
         ]
         for field in fields:
             setattr(self, field, getattr(entry, field))
